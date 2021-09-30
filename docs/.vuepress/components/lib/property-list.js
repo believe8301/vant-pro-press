@@ -561,6 +561,87 @@ const moduleConfig =
             ]
         },
         {
+            module: 'transition', content: [
+                {
+                    title: 'Props',
+                    columns: [
+                        {
+                            width: 200,
+                            title: '参数',
+                            dataIndex: 'param'
+                        },
+                        {
+                            width: 600,
+                            title: '说明',
+                            dataIndex: 'info',
+                        },
+                        {
+                            width: 200,
+                            title: '类型',
+                            dataIndex: 'type',
+                        },
+                        {
+                            width: 200,
+                            title: '默认值',
+                            dataIndex: 'default',
+                        }
+                    ],
+                    list: [
+                        {param: 'v-model/value', info: '是否显示组件', type: 'boolean', default: 'true'},
+                        {param: 'duration', info: '动画时长，单位毫秒', type: 'number', default: '300'},
+                        {param: 'name', info: '动画名称 fade（淡入） | slide-up（上滑进入） | slide-down（下滑进入） | slide-left（左滑进入） | slide-right（右滑进入） | fade-up（上滑淡入） | fade-down（下滑淡入） | fade-left（左滑淡入） | fade-right（右滑淡入）', type: 'string', default: 'fade'},
+                        {param: 'custom-style', info: '自定义样式', type: 'object', default: '{}'}
+                    ]
+                },
+                {
+                    title: 'Slots',
+                    columns: [
+                        {
+                            width: 200,
+                            title: '名称',
+                            dataIndex: 'param'
+                        },
+                        {
+                            width: 600,
+                            title: '说明',
+                            dataIndex: 'info',
+                        }
+                    ],
+                    list: [
+                        {param: '-', info: '自定义内容'}
+                    ]
+                },
+                {
+                    title: 'API',
+                    columns: [
+                        {
+                            width: 200,
+                            title: '方法名',
+                            dataIndex: 'name',
+                        },
+                        {
+                            width: 200,
+                            title: '参数',
+                            dataIndex: 'param'
+                        },
+                        {
+                            width: 600,
+                            title: '说明',
+                            dataIndex: 'info',
+                        }
+                    ],
+                    list: [
+                        {name: '@before-enter', param: '-', info: '组件加载前'},
+                        {name: '@enter', param: '-', info: '组件加载时'},
+                        {name: '@after-enter', param: '-', info: '组件加载完成后'},
+                        {name: '@before-leave', param: '-', info: '离开组件前'},
+                        {name: '@leave', param: '-', info: '离开组件时'},
+                        {name: '@after-leave', param: '-', info: '离开组件后'},
+                    ]
+                },
+            ]
+        },
+        {
             module: 'calendar', content: [
                 {
                     title: 'Props',

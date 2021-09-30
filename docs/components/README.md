@@ -75,7 +75,7 @@ Vue.use(vantPro)
 ```html
 <template>
 	<view>
-		<button  @click="calendarShow = true" >选择日期区间</button>
+		<van-button  @click="calendarShow = true" >选择日期区间</van-button>
 		<van-calendar v-model="calendarShow" @confirm="onConfirm" />
 	</view>
 </template>

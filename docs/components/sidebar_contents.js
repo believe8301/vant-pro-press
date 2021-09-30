@@ -44,9 +44,32 @@ module.exports = [
             {
                 title: '表单组件',
                 collapsable: false,
-                children: [{
-                    path: "/components/content/calendar/", title: 'Calendar 日历'
-                }]
+                children: [
+                    {
+                        path: "/components/content/calendar/", title: 'Calendar 日历'
+                    },
+                    {
+                        path: "/components/content/checkbox/", title: 'Checkbox 复选框'
+                    },
+                    {
+                        path: "/components/content/datetimePicker/", title: 'DatetimePicker 时间选择'
+                    },
+                    {
+                        path: "/components/content/field/", title: 'Field 输入框'
+                    },
+                    {
+                        path: "/components/content/picker/", title: 'Picker 选择器'
+                    },
+                    {
+                        path: "/components/content/radio/", title: 'Radio 单选框'
+                    },
+                    {
+                        path: "/components/content/rate/", title: 'Rate 评分'
+                    },
+                    {
+                        path: "/components/content/search/", title: 'Search 搜索'
+                    },
+                ]
             },
             {
                 title: '反馈组件',
