@@ -1,71 +1,63 @@
-# Cell 单元格
+# Radio 单选框
 ---
 
-单元格是列表中的单个展示项。
+在一组备选项中进行单选。
 
 ### 平台差异说明
 <ClientOnly>
-<platform-adaptation module="cell">
+<platform-adaptation module="radio">
 </platform-adaptation>
 </ClientOnly>
 
 ### 代码演示
 
 ### 基础用法
+通过 value/v-model 可之家绑定当前选中项的 name
 ```vue
-<van-cell-group>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
-```
-cell 可以单独使用，也可以和 van-cell-group 联用，van-cell-group 为其提供上下外边框，卡片等样式。
-
-### 卡片风格
-通过 inset 属性为true，设置其风格为卡片风格。
-
-```vue
-<van-cell-group :inset="true">
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
+<van-radio-group v-model="selectRadio" @change="change">
+  <van-radio name="1">
+    单选1
+  </van-radio>
+  <van-radio name="2">
+    单选2
+  </van-radio>
+</van-radio-group>
 ```
 
-### 大小设置
-通过 size 属性控制单元格大小，可选值 large。
+### 排列方向
+通过 direction 属性设置排列方向，可选值为 vertical、horizontal。
 
 ```vue
-<van-cell title="cell" value="content" label="label" size="large"></van-cell>
+<van-radio-group v-model="selectRadio" direction="horizontal" @change="change">
+  <van-radio name="1">
+   单选1
+  </van-radio>
+  <van-radio name="2">
+    单选2
+  </van-radio>
+</van-radio-group>
 ```
 
-### 图标设置
-通过 icon 左侧图标名称或图片链接，可选值见 Icon 组件。
+### 选择框形状
+通过 shape 属性控制选择框形状，可选值为 round、square。
 
 ```vue
-<van-cell icon="plus" title="cell" value="content" label="label"></van-cell>
+<van-radio name="1" shape="square">单选1</van-radio>
 ```
 
-### 展示箭头
-通过 is-link 属性设置展示右侧箭头并开启点击反馈。
+### 选中状态颜色
+通过 checked-color 属性控制选中状态颜色。
 
 ```vue
-<van-cell title="cell" value="content" :is-link="true"></van-cell>
+<van-radio name="1" checked-color="red">单选1</van-radio>
 ```
-
-### 是否必填
-通过 required 属性设置是否显示表单必填星号。
-
-```vue
-<van-cell title="cell" value="content" :required="true"></van-cell>
-```
-
-
 
 <ClientOnly>
-<property-list module="cell"></property-list>
+<property-list module="radio"></property-list>
 </ClientOnly>
 
 
 
 <ClientOnly>
-<mobile-devices page="pages/components/button/button"></mobile-devices>
+<mobile-devices page="pages/components/radio/radio"></mobile-devices>
 </ClientOnly>

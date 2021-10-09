@@ -1,71 +1,80 @@
-# Cell 单元格
+# datetime-picker 时间选择
 ---
 
-单元格是列表中的单个展示项。
+支持事件选择。
 
 ### 平台差异说明
 <ClientOnly>
-<platform-adaptation module="cell">
+<platform-adaptation module="datetime-picker">
 </platform-adaptation>
 </ClientOnly>
 
 ### 代码演示
 
 ### 基础用法
+datetime-picker type 属性有 datetime | date | time | year-month，默认为 datetime。不建议动态修改其属性值。
 ```vue
-<van-cell-group>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
-```
-cell 可以单独使用，也可以和 van-cell-group 联用，van-cell-group 为其提供上下外边框，卡片等样式。
-
-### 卡片风格
-通过 inset 属性为true，设置其风格为卡片风格。
-
-```vue
-<van-cell-group :inset="true">
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
+<van-datetime-picker
+    v-model="currentDate"
+    type="datetime"
+/>
 ```
 
-### 大小设置
-通过 size 属性控制单元格大小，可选值 large。
+### 格式化事件
+通过 formatter 属性，可定义时间选择器中时间的格式。
 
 ```vue
-<van-cell title="cell" value="content" label="label" size="large"></van-cell>
+<van-datetime-picker
+    v-model="currentDate"
+    :formatter="formatterTime"
+    type="datetime"
+/>
+```
+```js
+formatterTime(type, value){
+    if (type === 'year') {
+        return `${value}年`;
+    }
+    if (type === 'month') {
+        return `${value}月`;
+    }
+    return value;
+}
 ```
 
-### 图标设置
-通过 icon 左侧图标名称或图片链接，可选值见 Icon 组件。
+### 设置可选时间范围
+通过 formatter 属性，可定义时间选择器中时间的格式。
 
 ```vue
-<van-cell icon="plus" title="cell" value="content" label="label"></van-cell>
+<van-datetime-picker
+    v-model="currentDate"
+    :min-date="minDate"
+    :max-date="maxDate"
+    type="datetime"
+/>
+```
+```js
+maxDate: new Date().getTime(), 
+minDate: new Date('2021/10/7').getTime()
 ```
 
-### 展示箭头
-通过 is-link 属性设置展示右侧箭头并开启点击反馈。
+### 显示顶部状态栏
+通过 show-toolbar 属性控制是否显示顶部状态栏。
 
 ```vue
-<van-cell title="cell" value="content" :is-link="true"></van-cell>
+<van-datetime-picker
+    v-model="currentDate"
+    :show-toolbar="true"
+    type="datetime"
+/>
 ```
-
-### 是否必填
-通过 required 属性设置是否显示表单必填星号。
-
-```vue
-<van-cell title="cell" value="content" :required="true"></van-cell>
-```
-
-
 
 <ClientOnly>
-<property-list module="cell"></property-list>
+<property-list module="datetime-picker"></property-list>
 </ClientOnly>
 
 
 
 <ClientOnly>
-<mobile-devices page="pages/components/button/button"></mobile-devices>
+<mobile-devices page="pages/components/datetime-picker/datetime-picker"></mobile-devices>
 </ClientOnly>

@@ -1,71 +1,49 @@
-# Cell 单元格
+# Search 搜索
 ---
 
-单元格是列表中的单个展示项。
-
+用于搜索场景的输入框组件。
 ### 平台差异说明
 <ClientOnly>
-<platform-adaptation module="cell">
+<platform-adaptation module="search">
 </platform-adaptation>
 </ClientOnly>
 
 ### 代码演示
 
 ### 基础用法
+label 是输入框左侧文字，为空时不显示。
 ```vue
-<van-cell-group>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
-```
-cell 可以单独使用，也可以和 van-cell-group 联用，van-cell-group 为其提供上下外边框，卡片等样式。
-
-### 卡片风格
-通过 inset 属性为true，设置其风格为卡片风格。
-
-```vue
-<van-cell-group :inset="true">
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
+<van-search :value="value" placeholder="请输入" label="搜索" @change="onchange"></van-search>
 ```
 
-### 大小设置
-通过 size 属性控制单元格大小，可选值 large。
+### 搜索框形状
+通过 shape 属性为round，设置输入框形状。
 
 ```vue
-<van-cell title="cell" value="content" label="label" size="large"></van-cell>
+<van-search :value="value" placeholder="请输入" shape="round" @change="onchange"></van-search>
 ```
 
-### 图标设置
-通过 icon 左侧图标名称或图片链接，可选值见 Icon 组件。
+### 取消按钮
+通过 show-action 属性是否显示右侧取消按钮。
 
 ```vue
-<van-cell icon="plus" title="cell" value="content" label="label"></van-cell>
+<van-search :value="value" placeholder="请输入" :show-action="true" @change="onchange"></van-search>
 ```
 
-### 展示箭头
-通过 is-link 属性设置展示右侧箭头并开启点击反馈。
+### 禁用输入框
+通过 disabled 为 true 可禁用输入框。
 
 ```vue
-<van-cell title="cell" value="content" :is-link="true"></van-cell>
+<van-search :value="value" placeholder="请输入" :disabled="true" @change="onchange"></van-search>
 ```
-
-### 是否必填
-通过 required 属性设置是否显示表单必填星号。
-
-```vue
-<van-cell title="cell" value="content" :required="true"></van-cell>
-```
-
 
 
 <ClientOnly>
-<property-list module="cell"></property-list>
+<property-list module="search"></property-list>
 </ClientOnly>
 
 
 
 <ClientOnly>
-<mobile-devices page="pages/components/button/button"></mobile-devices>
+<mobile-devices page="pages/components/search/search"></mobile-devices>
 </ClientOnly>

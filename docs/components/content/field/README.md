@@ -1,71 +1,57 @@
-# Cell 单元格
+# Field 输入框
 ---
 
-单元格是列表中的单个展示项。
+支持文本输入等。
 
 ### 平台差异说明
 <ClientOnly>
-<platform-adaptation module="cell">
+<platform-adaptation module="field">
 </platform-adaptation>
 </ClientOnly>
 
 ### 代码演示
 
 ### 基础用法
+label 属性可设置输入框左侧文本，placeholder 设置输入框为空时的占位符
 ```vue
-<van-cell-group>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
-```
-cell 可以单独使用，也可以和 van-cell-group 联用，van-cell-group 为其提供上下外边框，卡片等样式。
-
-### 卡片风格
-通过 inset 属性为true，设置其风格为卡片风格。
-
-```vue
-<van-cell-group :inset="true">
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
+<van-field label="文本" placeholder="请输入文本" :value="value" @change="confirm"></van-field>
 ```
 
-### 大小设置
-通过 size 属性控制单元格大小，可选值 large。
+### 边框设置
+通过 border 属性可控制其是否显示内边框。
 
 ```vue
-<van-cell title="cell" value="content" label="label" size="large"></van-cell>
+<van-field v-model="value" label="文本" placeholder="请输入文本" :border="false"></van-field>
 ```
 
-### 图标设置
-通过 icon 左侧图标名称或图片链接，可选值见 Icon 组件。
+### 清除控件
+通过 clearable 属性控制是否显示清楚控件。
 
 ```vue
-<van-cell icon="plus" title="cell" value="content" label="label"></van-cell>
+<van-field v-model="value" label="文本" placeholder="请输入文本" :clearable="true"></van-field>
 ```
 
-### 展示箭头
-通过 is-link 属性设置展示右侧箭头并开启点击反馈。
+### 禁用输入框
+通过 disabled 属性设置是否禁用输入框。
 
 ```vue
-<van-cell title="cell" value="content" :is-link="true"></van-cell>
+<van-field v-model="value" label="文本" placeholder="请输入文本" :disabled="true"></van-field>
 ```
 
-### 是否必填
-通过 required 属性设置是否显示表单必填星号。
+### 类型设置
+通过 type 属性可将其设置为任意原生类型, 如 number、idcard、textarea、digit等，默认为 text。
 
 ```vue
-<van-cell title="cell" value="content" :required="true"></van-cell>
+<van-field v-model="value" label="文本" placeholder="请输入文本" type="textarea"></van-field>
 ```
-
 
 
 <ClientOnly>
-<property-list module="cell"></property-list>
+<property-list module="field"></property-list>
 </ClientOnly>
 
 
 
 <ClientOnly>
-<mobile-devices page="pages/components/button/button"></mobile-devices>
+<mobile-devices page="pages/components/field/field"></mobile-devices>
 </ClientOnly>

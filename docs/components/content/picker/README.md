@@ -1,11 +1,11 @@
-# Cell 单元格
+# Picker 选择器
 ---
 
-单元格是列表中的单个展示项。
+提供一个或多个集合的选择器。
 
 ### 平台差异说明
 <ClientOnly>
-<platform-adaptation module="cell">
+<platform-adaptation module="picker">
 </platform-adaptation>
 </ClientOnly>
 
@@ -13,59 +13,34 @@
 
 ### 基础用法
 ```vue
-<van-cell-group>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
+<van-picker :columns="columns" @change="onchange"></van-picker>
 ```
-cell 可以单独使用，也可以和 van-cell-group 联用，van-cell-group 为其提供上下外边框，卡片等样式。
 
-### 卡片风格
-通过 inset 属性为true，设置其风格为卡片风格。
+```js
+columns: ['杭州', '宁波', '温州', '嘉兴', '湖州']
+```
+
+### 设置默认选中项
+通过 default-index 属性设置默认选中项的下标。
 
 ```vue
-<van-cell-group :inset="true">
-  <van-cell title="cell" value="content" label="label"></van-cell>
-  <van-cell title="cell" value="content" label="label"></van-cell>
-</van-cell-group>
+<van-picker :columns="columns" :default-index="2" @change="onchange"></van-picker>
 ```
 
-### 大小设置
-通过 size 属性控制单元格大小，可选值 large。
+### 设置顶部状态栏
+通过 show-toolbar 属性控制是否显示顶部状态栏。
 
 ```vue
-<van-cell title="cell" value="content" label="label" size="large"></van-cell>
+<van-picker :columns="columns" :show-toolbar="true" @cancel="oncancel" @confirm="onConfirm"></van-picker>
 ```
-
-### 图标设置
-通过 icon 左侧图标名称或图片链接，可选值见 Icon 组件。
-
-```vue
-<van-cell icon="plus" title="cell" value="content" label="label"></van-cell>
-```
-
-### 展示箭头
-通过 is-link 属性设置展示右侧箭头并开启点击反馈。
-
-```vue
-<van-cell title="cell" value="content" :is-link="true"></van-cell>
-```
-
-### 是否必填
-通过 required 属性设置是否显示表单必填星号。
-
-```vue
-<van-cell title="cell" value="content" :required="true"></van-cell>
-```
-
 
 
 <ClientOnly>
-<property-list module="cell"></property-list>
+<property-list module="picker"></property-list>
 </ClientOnly>
 
 
 
 <ClientOnly>
-<mobile-devices page="pages/components/button/button"></mobile-devices>
+<mobile-devices page="pages/components/picker/picker"></mobile-devices>
 </ClientOnly>

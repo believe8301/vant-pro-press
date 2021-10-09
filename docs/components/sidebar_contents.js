@@ -74,9 +74,14 @@ module.exports = [
             {
                 title: '反馈组件',
                 collapsable: false,
-                children: [{
+                children: [
+                    {
+                        path: "/components/content/loading/", title: 'Loading 加载'
+                    },
+                    {
                     path: "/components/content/overlay/", title: 'Overlay 遮罩层'
-                }]
+                }
+                ]
             },
         ]
         // 必要的，分组的子项目

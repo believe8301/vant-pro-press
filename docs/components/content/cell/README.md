@@ -67,5 +67,5 @@ cell 可以单独使用，也可以和 van-cell-group 联用，van-cell-group �
 
 
 <ClientOnly>
-<mobile-devices page="pages/components/button/button"></mobile-devices>
+<mobile-devices page="pages/components/cell/cell"></mobile-devices>
 </ClientOnly>
