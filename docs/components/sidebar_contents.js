@@ -69,6 +69,9 @@ module.exports = [
                     {
                         path: "/components/content/search/", title: 'Search 搜索'
                     },
+                    {
+                        path: "/components/content/slider/", title: 'Slider 滑块'
+                    },
                 ]
             },
             {

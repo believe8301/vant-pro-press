@@ -1418,6 +1418,93 @@ const moduleConfig =
             ]
         },
         {
+            module: 'slider', content: [
+                {
+                    title: 'Props',
+                    columns: [
+                        {
+                            width: 200,
+                            title: '参数',
+                            dataIndex: 'param'
+                        },
+                        {
+                            width: 600,
+                            title: '说明',
+                            dataIndex: 'info',
+                        },
+                        {
+                            width: 200,
+                            title: '类型',
+                            dataIndex: 'type',
+                        },
+                        {
+                            width: 200,
+                            title: '默认值',
+                            dataIndex: 'default',
+                        }
+                    ],
+                    list: [
+                        {param: 'value/v-model', info: '当前进度百分比，在双滑块模式下为数组格式', type: 'number | array', default: '0'},
+                        {param: 'disabled', info: '是否禁用滑块', type: 'boolean', default: '-'},
+                        {param: 'max', info: '最大值', type: 'number', default: '100'},
+                        {param: 'min', info: '最小值', type: 'number', default: '0'},
+                        {param: 'step', info: '步长', type: 'number', default: '1'},
+                        {param: 'bar-height', info: '进度条高度，默认单位为 rpx', type: 'string | number', default: '-'},
+                        {param: 'active-color', info: '进度条激活态颜色', type: 'string', default: '-'},
+                        {param: 'inactive-color', info: '进度条默认颜色', type: 'string', default: '-'},
+                        {param: 'use-button-slot', info: '是否使用按钮插槽', type: 'boolean', default: '-'},
+                        {param: 'range', info: '是否开启双滑块模式', type: 'boolean', default: '-'}
+                    ]
+                },
+                {
+                    title: 'Slots',
+                    columns: [
+                        {
+                            width: 200,
+                            title: '名称',
+                            dataIndex: 'name'
+                        },
+                        {
+                            width: 700,
+                            title: '说明',
+                            dataIndex: 'info',
+                        }
+                    ],
+                    list: [
+                        {name: 'button', info: '自定义滑块按钮'},
+                        {name: 'left-button', info: '自定义左侧滑块按钮（双滑块模式下）'},
+                        {name: 'right-button', info: '自定义右侧滑块按钮（双滑块模式下）'}
+                    ]
+                },
+                {
+                    title: 'Events',
+                    columns: [
+                        {
+                            width: 200,
+                            title: '事件名',
+                            dataIndex: 'name'
+                        },
+                        {
+                            width: 700,
+                            title: '说明',
+                            dataIndex: 'info',
+                        },
+                        {
+                            width: 300,
+                            title: '回调参数',
+                            dataIndex: 'callback',
+                        }
+                    ],
+                    list: [
+                        {name: 'change', info: '进度值改变后触发', callback: 'event: 当前进度'},
+                        {name: 'drag', info: '拖动进度条时触发', callback: 'event.value: 当前进度'},
+                        {name: 'drag-start', info: '开始拖动时触发', callback: '-'},
+                        {name: 'drag-end', info: '结束拖动时触发', callback: '-'},
+                    ]
+                },
+            ]
+        },
+        {
             module: 'loading', content: [
                 {
                     title: 'Props',
